@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>MovieTester.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #98556c; font-weight: bold;}
+.s1 { color: #29000d;}
+.s2 { color: #7f8d78; font-style: italic;}
+.s3 { color: #875a9d;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MovieTester.java</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">java.util.ArrayList;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">MovieTester {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">Scanner stdin = </span><span class="s0">new </span><span class="s1">Scanner(System.in);</span>
+
+        <span class="s2">// step 1: Ask for the number of movies and create ArrayList</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;How many movies are in your collection?&quot;</span><span class="s1">);</span>
+        <span class="s0">int </span><span class="s1">numMovies = stdin.nextInt();</span>
+        <span class="s1">ArrayList&lt;Movie&gt; myCollection = </span><span class="s0">new </span><span class="s1">ArrayList&lt;Movie&gt;(numMovies);</span>
+
+        <span class="s2">// step 2: Collect data for each movie</span>
+        <span class="s0">for </span><span class="s1">(</span><span class="s0">int </span><span class="s1">i = </span><span class="s3">0</span><span class="s1">; i &lt; numMovies; i++) {</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter movie name: &quot;</span><span class="s1">);</span>
+            <span class="s1">String name = stdin.next();</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter movie rating (Ex. PG-13): &quot;</span><span class="s1">);</span>
+            <span class="s1">String rating = stdin.next();</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter release year: &quot;</span><span class="s1">);</span>
+            <span class="s0">int </span><span class="s1">year = stdin.nextInt();</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter runtime in minutes: &quot;</span><span class="s1">);</span>
+            <span class="s0">double </span><span class="s1">runtime = stdin.nextDouble();</span>
+            <span class="s1">System.out.println(</span><span class="s3">&quot;Enter number of stars (1-5): &quot;</span><span class="s1">);</span>
+            <span class="s0">int </span><span class="s1">stars = stdin.nextInt();</span>
+
+            <span class="s2">// create movie object and add to ArrayList</span>
+            <span class="s1">Movie movie = </span><span class="s0">new </span><span class="s1">Movie(name, rating, year, runtime, stars);</span>
+            <span class="s1">myCollection.add(movie);</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// step 3: printing all movies in the collection</span>
+        <span class="s0">for </span><span class="s1">(Movie movie : myCollection) {</span>
+            <span class="s1">System.out.println(movie.toString());</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// step 4: searching for a movie title substring</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;Enter a substring to search for in movie titles: &quot;</span><span class="s1">);</span>
+        <span class="s1">String searchString = stdin.next();</span>
+        <span class="s0">for </span><span class="s1">(Movie movie : myCollection) {</span>
+            <span class="s0">if </span><span class="s1">(movie.getName().contains(searchString)) {</span>
+                <span class="s1">System.out.println(</span><span class="s3">&quot;Found movie: &quot; </span><span class="s1">+ movie.getName());</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+        <span class="s2">// step 5: finding movie with the longest runtime</span>
+        <span class="s1">Movie longestMovie = myCollection.get(</span><span class="s3">0</span><span class="s1">);</span>
+        <span class="s0">for </span><span class="s1">(Movie movie : myCollection) {</span>
+            <span class="s0">if </span><span class="s1">(movie.getRunTime() &gt; longestMovie.getRunTime()) {</span>
+                <span class="s1">longestMovie = movie;</span>
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+        <span class="s1">System.out.println(</span><span class="s3">&quot;The movie with the longest runtime is: &quot; </span><span class="s1">+ longestMovie.getName());</span>
+
+        <span class="s1">stdin.close();</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

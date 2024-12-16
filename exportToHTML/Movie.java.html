@@ -1,0 +1,79 @@
+<html>
+<head>
+<title>Movie.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #98556c; font-weight: bold;}
+.s1 { color: #29000d;}
+.s2 { color: #7f8d78; font-style: italic;}
+.s3 { color: #875a9d;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Movie.java</font>
+</center></td></tr></table>
+<pre><span class="s0">public class </span><span class="s1">Movie {</span>
+    <span class="s0">private </span><span class="s1">String name;</span>
+    <span class="s0">private </span><span class="s1">String movieRating;</span>
+    <span class="s0">private int </span><span class="s1">releaseDate;</span>
+    <span class="s0">private double </span><span class="s1">runTime;</span>
+    <span class="s0">private int </span><span class="s1">numOfStars;</span>
+
+    <span class="s2">// default constructors</span>
+    <span class="s0">public </span><span class="s1">Movie() {</span>
+        <span class="s0">this</span><span class="s1">.name = </span><span class="s3">&quot;&quot;</span><span class="s1">;</span>
+        <span class="s0">this</span><span class="s1">.movieRating = </span><span class="s3">&quot;&quot;</span><span class="s1">;</span>
+        <span class="s0">this</span><span class="s1">.releaseDate = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s0">this</span><span class="s1">.runTime = </span><span class="s3">0.0</span><span class="s1">;</span>
+        <span class="s0">this</span><span class="s1">.numOfStars = </span><span class="s3">0</span><span class="s1">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">// non-default constructors</span>
+    <span class="s0">public </span><span class="s1">Movie(String name, String movieRating, </span><span class="s0">int </span><span class="s1">releaseDate, </span><span class="s0">double </span><span class="s1">runTime, </span><span class="s0">int </span><span class="s1">numOfStars) {</span>
+        <span class="s0">this</span><span class="s1">.name = name;</span>
+        <span class="s0">this</span><span class="s1">.movieRating = movieRating;</span>
+        <span class="s0">this</span><span class="s1">.releaseDate = releaseDate;</span>
+        <span class="s0">this</span><span class="s1">.runTime = runTime;</span>
+        <span class="s0">this</span><span class="s1">.numOfStars = numOfStars;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">// here is where i will place the getter methods</span>
+    <span class="s0">public </span><span class="s1">String getName() { </span><span class="s0">return </span><span class="s1">name; }</span>
+    <span class="s0">public </span><span class="s1">String getMovieRating() { </span><span class="s0">return </span><span class="s1">movieRating; }</span>
+    <span class="s0">public int </span><span class="s1">getReleaseDate() { </span><span class="s0">return </span><span class="s1">releaseDate; }</span>
+    <span class="s0">public double </span><span class="s1">getRunTime() { </span><span class="s0">return </span><span class="s1">runTime; }</span>
+    <span class="s0">public int </span><span class="s1">getNumOfStars() { </span><span class="s0">return </span><span class="s1">numOfStars; }</span>
+
+    <span class="s2">// here will be the setter methods</span>
+    <span class="s0">public void </span><span class="s1">setName(String name) { </span><span class="s0">this</span><span class="s1">.name = name; }</span>
+    <span class="s0">public void </span><span class="s1">setMovieRating(String movieRating) { </span><span class="s0">this</span><span class="s1">.movieRating = movieRating; }</span>
+    <span class="s0">public void </span><span class="s1">setReleaseDate(</span><span class="s0">int </span><span class="s1">releaseDate) { </span><span class="s0">this</span><span class="s1">.releaseDate = releaseDate; }</span>
+    <span class="s0">public void </span><span class="s1">setRunTime(</span><span class="s0">double </span><span class="s1">runTime) { </span><span class="s0">this</span><span class="s1">.runTime = runTime; }</span>
+    <span class="s0">public void </span><span class="s1">setNumOfStars(</span><span class="s0">int </span><span class="s1">numOfStars) { </span><span class="s0">this</span><span class="s1">.numOfStars = numOfStars; }</span>
+
+    <span class="s2">// using @override toString() method</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public </span><span class="s1">String toString() {</span>
+        <span class="s0">return </span><span class="s3">&quot;Movie{title='&quot; </span><span class="s1">+ name + </span><span class="s3">&quot;', rating='&quot; </span><span class="s1">+ movieRating + </span><span class="s3">&quot;', releaseDate=&quot; </span><span class="s1">+ releaseDate +</span>
+                <span class="s3">&quot;, runtime=&quot; </span><span class="s1">+ runTime + </span><span class="s3">&quot;, review=&quot; </span><span class="s1">+ numOfStars + </span><span class="s3">&quot;}&quot;</span><span class="s1">;</span>
+    <span class="s1">}</span>
+
+    <span class="s2">// again using @override equals() method</span>
+    <span class="s1">@Override</span>
+    <span class="s0">public boolean </span><span class="s1">equals(Object obj) {</span>
+        <span class="s0">if </span><span class="s1">(</span><span class="s0">this </span><span class="s1">== obj) </span><span class="s0">return true</span><span class="s1">;</span>
+        <span class="s0">if </span><span class="s1">(obj == </span><span class="s0">null </span><span class="s1">|| getClass() != obj.getClass()) </span><span class="s0">return false</span><span class="s1">;</span>
+        <span class="s1">Movie movie = (Movie) obj;</span>
+        <span class="s0">return </span><span class="s1">releaseDate == movie.releaseDate &amp;&amp;</span>
+                <span class="s1">Double.compare(movie.runTime, runTime) == </span><span class="s3">0 </span><span class="s1">&amp;&amp;</span>
+                <span class="s1">numOfStars == movie.numOfStars &amp;&amp;</span>
+                <span class="s1">name.equals(movie.name) &amp;&amp;</span>
+                <span class="s1">movieRating.equals(movie.movieRating);</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+</pre>
+</body>
+</html>
